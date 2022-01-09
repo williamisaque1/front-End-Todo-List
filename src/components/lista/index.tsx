@@ -13,7 +13,14 @@ export function Lista() {
       <List>
         {tarefa.length ? (
           tarefa.map((tarefa) => (
-            <ItemLista key={tarefa.id}>
+            <ItemLista
+              key={tarefa.id}
+              style={
+                tarefa.realizada
+                  ? { textDecoration: "line-through", color: "red" }
+                  : {}
+              }
+            >
               <input
                 type={"checkbox"}
                 onChange={(p) => {

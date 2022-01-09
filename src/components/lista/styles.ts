@@ -19,9 +19,13 @@ align-items: center;
 justify-content: space-between;
 border-radius: 50rem;
 background-color:#c5c5c5;
+font-size: 20px;
 input{
+    
     width: 1.8rem;
-    height: 1.8rem
+    height: 1.8rem;
+  
+    
 }
 padding: 1.2rem;
 & + li{
@@ -29,8 +33,10 @@ padding: 1.2rem;
    
 }
 svg{
+    
     height: 45px;
     cursor: pointer;
     margin-right: 2rem;   
+    color:black
 }
 `;
