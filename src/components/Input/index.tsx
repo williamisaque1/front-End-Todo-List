@@ -13,6 +13,12 @@ export function Input() {
         value={dadosInput}
         onChange={(text) => setDadosInput(text.currentTarget.value)}
         placeholder="adicione uma tarefa !!!"
+        onKeyPress={(e) => {
+          if (e.key == "Enter" && dadosInput.length != 0) {
+            adicionar(uuidv4(), dadosInput, false);
+            setDadosInput("");
+          }
+        }}
       />
       <Botao
         value={dadosInput}
