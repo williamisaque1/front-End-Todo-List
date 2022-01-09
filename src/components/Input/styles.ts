@@ -45,7 +45,9 @@ outline: 0;
 interface propsInput {
   value:string;
 }
-export const Botao = styled.button <propsInput> `
+export const Botao = styled.button.attrs((props:propsInput)=>({
+  disabled: props.value.length == 0 ? true : false
+})) <propsInput> `
 position: absolute;
 right: 0;
 height: 3rem;
@@ -53,5 +55,5 @@ width: 6rem;
 border-radius: 1rem;
 border-top: 0;
 border-right: 0;
-cursor: ${(props:propsInput)=> props.value.length == 0 && 'not-allowed'}
+
 `
