@@ -14,7 +14,7 @@ interface Tarefas {
   id: number;
   conteudo: string;
   realizada: boolean;
-  createdAt: string;
+  createdAt?: string;
 }
 //type tarefaProps = Omit<Tarefas, "conteudo" | "realizada">;
 

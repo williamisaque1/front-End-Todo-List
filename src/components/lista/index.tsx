@@ -29,7 +29,7 @@ export function Lista() {
                 }}
                 checked={tarefa.realizada}
               />
-              {tarefa.conteudo}
+              <p>{tarefa.conteudo}</p>
               <FaTrashAlt onClick={() => deletar(tarefa.id)} />
             </ItemLista>
           ))
