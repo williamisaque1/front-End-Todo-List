@@ -24,6 +24,7 @@ input{
     
     width: 1.8rem;
     height: 1.8rem;
+    cursor: pointer;
   
     
 }
