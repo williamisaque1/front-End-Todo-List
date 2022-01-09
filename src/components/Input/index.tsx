@@ -10,6 +10,7 @@ export function Input() {
   return (
     <Secao>
       <InputTarefa
+        value={dadosInput}
         onChange={(text) => setDadosInput(text.currentTarget.value)}
         placeholder="adicione uma tarefa !!!"
       />
@@ -17,6 +18,7 @@ export function Input() {
         value={dadosInput}
         onClick={() => {
           dadosInput.length != 0 && adicionar(uuidv4(), dadosInput, false);
+          setDadosInput("");
         }}
       >
         adicionar

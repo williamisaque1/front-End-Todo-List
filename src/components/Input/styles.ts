@@ -25,6 +25,7 @@ background-color: white;
 `
 
 export const InputTarefa =  styled.input.attrs((props)=>({
+
   autoFocus:true
 })) `
 background-color: white;
