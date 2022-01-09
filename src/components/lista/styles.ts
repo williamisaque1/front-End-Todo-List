@@ -8,6 +8,9 @@ margin-right: 5rem;
 
 &:last-child{
  margin-bottom: 1rem;
+ @media (min-width: 380px) AND (max-width: 500px) {
+    margin-bottom: 3.5rem;
+ }
 }
 min-width: 380px;
 @media (min-width: 380px) AND (max-width: 500px) {
@@ -24,28 +27,21 @@ align-items: center;
 justify-content: space-between;
 border-radius: 50rem;
 background-color:#c5c5c5;
-
-
 p{
     overflow-x:auto;
     margin-left: 0.5rem;
    margin-right: 0.5rem;
-  
 }
 input{
-    
     width: 1.8rem;
     height: 1.8rem;
     min-width: 1.8rem;
     cursor: pointer;
     margin-left: 1rem;
-  
-    
 }
 padding: 1.2rem;
 & + li{
     margin-top: 1rem;
-   
 }
 svg{
     

@@ -4,15 +4,15 @@ import { useEffect } from "react";
 import { useTrasactions } from "../../hooks/usehook";
 
 export function Lista() {
-  const { tarefa, deletar, modificar, carregar } = useTrasactions();
+  const { tarefas, deletar, modificar, carregar } = useTrasactions();
   useEffect(() => {
     carregar();
   }, []);
   return (
     <>
       <List>
-        {tarefa.length ? (
-          tarefa.map((tarefa) => (
+        {tarefas.length ? (
+          tarefas.map((tarefa) => (
             <ItemLista
               key={tarefa.id}
               style={

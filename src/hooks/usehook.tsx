@@ -19,7 +19,7 @@ interface Tarefas {
 //type tarefaProps = Omit<Tarefas, "conteudo" | "realizada">;
 
 interface parametros {
-  tarefa: Tarefas[];
+  tarefas: Tarefas[];
   carregar: () => void;
   deletar: (id: number) => void;
   adicionar: (id: string, conteudo: string, realizado: boolean) => void;
@@ -66,7 +66,7 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
 
   return (
     <TransactionContext.Provider
-      value={{ tarefa: dados, carregar, deletar, adicionar, modificar }}
+      value={{ tarefas: dados, carregar, deletar, adicionar, modificar }}
     >
       {children}
     </TransactionContext.Provider>

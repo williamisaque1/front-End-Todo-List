@@ -5,12 +5,7 @@ export const HeaderContainer = styled.header`
   background-color: black;
   border-bottom: 2px solid red;
   min-width: 380px;
-div{
-    margin: auto 0;
-   height: 5rem;
-   width: 14rem;
 
-}
   h2{
     margin-left: 2rem;
      color: white;

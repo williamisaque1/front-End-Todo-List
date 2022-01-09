@@ -31,7 +31,9 @@ html{
     //para usar no rem
 }
 body{
-    background: var(--background);
+ 
+ overflow-y: hidden;
+
     -webkit-font-smoothing:antialiased;  
 }
 body,input,textarea,button{
