@@ -1,4 +1,4 @@
-import { useTrasactions } from "../hooks/usehook";
+import { useTrasactions } from "../../hooks/usehook";
 import { Botao, InputTarefa, Secao } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 

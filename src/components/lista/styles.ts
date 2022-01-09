@@ -11,18 +11,13 @@ min-width: 380px;
 @media (min-width: 380px) AND (max-width: 500px) {
     margin:0 1rem;
     margin-top: 1rem;
-    
 }
 `;
 export const ItemLista = styled.li`
-
 display: flex;
-
 align-items: center;
 justify-content: space-between;
 border-radius: 50rem;
-
-
 background-color:#c5c5c5;
 input{
     width: 1.8rem;
@@ -34,13 +29,8 @@ padding: 1.2rem;
    
 }
 svg{
-
-
     height: 45px;
     cursor: pointer;
-    margin-right: 2rem;
-    
+    margin-right: 2rem;   
 }
-
-  
 `;

@@ -26,28 +26,17 @@ html{
         
     }
     @media (max-width: 720px) {
-        font-size: 87,5%; //14px
-        
-        
+        font-size: 87,5%; //14px 
     }
     //para usar no rem
-    
 }
 body{
     background: var(--background);
-
- 
-   
-  
-    -webkit-font-smoothing:antialiased;
-  
- 
-   
+    -webkit-font-smoothing:antialiased;  
 }
 body,input,textarea,button{
 font-family: "Poppins",sans-serif;
 font-weight: 400;
-
 }
 h1,h2,h3,h4,h5,h6,strong{
     font-weight: 600;
@@ -56,13 +45,10 @@ h1,h2,h3,h4,h5,h6,strong{
 button{
     cursor: pointer;
     box-shadow: 0 0 0 0;
-    
     outline: 0;
     transition: filter 0.2s;
   &:hover{
       filter: brightness(0.9);
-    
-
   }
 }
 [disabled]{
@@ -99,7 +85,5 @@ border-radius: 0.24rem;
   &:hover{
       filter: brightness(0.8);
   }
-
 }
-
 `

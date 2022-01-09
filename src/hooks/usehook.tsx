@@ -32,28 +32,25 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
     carregar();
   }, []);
   const carregar = () => {
-    axios.get("http://192.168.0.17:3333").then((inf) => {
-      console.log("dados carregados", inf.data);
+    axios.get("http://back-endtodolist.herokuapp.com").then((inf) => {
       Setdados(inf.data);
     });
   };
   const adicionar = (id: string, conteudo: string, realizada: boolean) => {
     console.log("dados id", id);
     axios
-      .post(`http://192.168.0.17:3333`, {
+      .post(`http://back-endtodolist.herokuapp.com/`, {
         id,
         conteudo,
         realizada,
       })
       .then((inf) => {
-        console.log("tarefa adicionada", inf.data);
         carregar();
       });
   };
   const deletar = (id: number) => {
     console.log("dados id", id);
-    axios.delete(`http://192.168.0.17:3333/${id}`).then((inf) => {
-      console.log("dados excluidos", inf.data);
+    axios.delete(`http://back-endtodolist.herokuapp.com/${id}`).then((inf) => {
       carregar();
       inf.data == 1
         ? alert("tarefa deletada com sucesso")
@@ -61,11 +58,12 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
     });
   };
   const modificar = (id: number, realizada: boolean) => {
-    console.log("dados id" + id + "|" + realizada);
-    axios.patch(`http://192.168.0.17:3333/${id}`, { realizada }).then((inf) => {
-      console.log("dados modificados", inf.data);
-      carregar();
-    });
+    axios
+      .patch(`http://back-endtodolist.herokuapp.com/${id}`, { realizada })
+      .then((inf) => {
+        console.log("dados modificados", inf.data);
+        carregar();
+      });
   };
 
   return (

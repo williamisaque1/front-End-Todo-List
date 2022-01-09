@@ -1,7 +1,7 @@
 import { List, ItemLista } from "./styles";
 import { FaTrashAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { useTrasactions } from "../hooks/usehook";
+import { useTrasactions } from "../../hooks/usehook";
 interface Tarefas {
   id: number;
   conteudo: string;
@@ -30,14 +30,11 @@ export function Lista() {
             <ItemLista key={tarefa.id}>
               <input
                 type={"checkbox"}
-                onChange={() => {
-                  modificar(
-                    tarefa.id,
-                    Boolean(tarefa.realizada) == true ? false : true
-                  );
-                  console.log(tarefa);
+                onChange={(p) => {
+                  console.log(p.currentTarget.checked);
+                  modificar(tarefa.id, p.currentTarget.checked);
                 }}
-                checked={tarefa.realizada == true ? true : undefined}
+                checked={tarefa.realizada}
               />
               {tarefa.conteudo}
               <FaTrashAlt onClick={() => deletar(tarefa.id)} />
