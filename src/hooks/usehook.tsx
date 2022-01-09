@@ -30,14 +30,14 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   const [dados, Setdados] = useState<Tarefas[]>([]);
 
   const carregar = () => {
-    axios.get("http://back-endtodolist.herokuapp.com").then((inf) => {
+    axios.get("https://back-endtodolist.herokuapp.com").then((inf) => {
       Setdados(inf.data);
     });
   };
   const adicionar = (id: string, conteudo: string, realizada: boolean) => {
     console.log("dados id", id);
     axios
-      .post(`http://back-endtodolist.herokuapp.com`, {
+      .post(`https://back-endtodolist.herokuapp.com`, {
         id,
         conteudo,
         realizada,
@@ -48,7 +48,7 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   };
   const deletar = (id: number) => {
     console.log("dados id", id);
-    axios.delete(`http://back-endtodolist.herokuapp.com/${id}`).then((inf) => {
+    axios.delete(`https://back-endtodolist.herokuapp.com/${id}`).then((inf) => {
       carregar();
       inf.data == 1
         ? alert("tarefa deletada com sucesso")
@@ -57,7 +57,7 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   };
   const modificar = (id: number, realizada: boolean) => {
     axios
-      .patch(`http://back-endtodolist.herokuapp.com/${id}`, { realizada })
+      .patch(`https://back-endtodolist.herokuapp.com/${id}`, { realizada })
       .then((inf) => {
         console.log("dados modificados", inf.data);
         carregar();
