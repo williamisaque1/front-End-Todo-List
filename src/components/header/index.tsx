@@ -1,4 +1,3 @@
-import svgTudoList from "../../assets/svgTudoList.svg";
 import { HeaderContainer } from "./styles";
 
 export function Header() {

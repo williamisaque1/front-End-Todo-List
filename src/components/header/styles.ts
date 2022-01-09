@@ -9,10 +9,8 @@ div{
     margin: auto 0;
    height: 5rem;
    width: 14rem;
- 
-}
 
- 
+}
   h2{
     margin-left: 2rem;
      color: white;

@@ -6,6 +6,7 @@ import { useState } from "react";
 export function Input() {
   const { adicionar } = useTrasactions();
   const [dadosInput, setDadosInput] = useState("");
+
   return (
     <Secao>
       <InputTarefa

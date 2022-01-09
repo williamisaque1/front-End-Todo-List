@@ -19,44 +19,30 @@ background-color: white;
     margin-top: 1rem;
     
 }
-
-
 `
 export const InputTarefa = styled.input`
 background-color: white;
 width: 64rem;
 height: 3rem;
-
-    padding-left: 1rem;
-
-    border-radius: 1rem;
-    border-right:0;
-
+padding-left: 1rem;
+border-radius: 1rem;
+border-right:0;
 border-right:0;
 border-left: 0;
 border-top: 0;
 &:focus{
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
+box-shadow: 0 0 0 0;
+border: 0 none;
+outline: 0;
  
 }
 `
 export const Botao = styled.button`
-
 position: absolute;
 right: 0;
 height: 3rem;
 width: 6rem;
 border-radius: 1rem;
-
 border-top: 0;
 border-right: 0;
-
-
-
-
-
-
-
 `

@@ -14,6 +14,7 @@ interface Tarefas {
   id: number;
   conteudo: string;
   realizada: boolean;
+  createdAt: string;
 }
 //type tarefaProps = Omit<Tarefas, "conteudo" | "realizada">;
 
@@ -22,6 +23,7 @@ interface parametros {
   carregar: () => void;
   deletar: (id: number) => void;
   adicionar: (id: string, conteudo: string, realizado: boolean) => void;
+  modificar: (id: number, realizada: boolean) => void;
 }
 const TransactionContext = createContext<parametros>({} as parametros);
 export function TransactionsProvider({ children }: TrasactionsProviderProps) {
@@ -58,10 +60,17 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
         : alert("não foi possivel deletar a tarefa");
     });
   };
+  const modificar = (id: number, realizada: boolean) => {
+    console.log("dados id" + id + "|" + realizada);
+    axios.patch(`http://192.168.0.17:3333/${id}`, { realizada }).then((inf) => {
+      console.log("dados modificados", inf.data);
+      carregar();
+    });
+  };
 
   return (
     <TransactionContext.Provider
-      value={{ tarefa: dados, carregar, deletar, adicionar }}
+      value={{ tarefa: dados, carregar, deletar, adicionar, modificar }}
     >
       {children}
     </TransactionContext.Provider>

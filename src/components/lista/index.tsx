@@ -14,7 +14,7 @@ interface R {
 export function Lista() {
   const [dados, Setdados] = useState<Tarefas[]>([]);
   const [loading, Setloading] = useState(true || false || undefined);
-  const { tarefa, carregar, deletar } = useTrasactions();
+  const { tarefa, deletar, modificar } = useTrasactions();
   useEffect(() => {
     Setloading(true);
     Setdados(tarefa);
@@ -28,6 +28,17 @@ export function Lista() {
         {(loading == false && dados.length) != 0 ? (
           dados.map((tarefa) => (
             <ItemLista key={tarefa.id}>
+              <input
+                type={"checkbox"}
+                onChange={() => {
+                  modificar(
+                    tarefa.id,
+                    Boolean(tarefa.realizada) == true ? false : true
+                  );
+                  console.log(tarefa);
+                }}
+                checked={tarefa.realizada == true ? true : undefined}
+              />
               {tarefa.conteudo}
               <FaTrashAlt onClick={() => deletar(tarefa.id)} />
             </ItemLista>
