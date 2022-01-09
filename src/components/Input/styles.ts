@@ -1,4 +1,8 @@
+import React from "react";
 import styled from "styled-components";
+
+
+
 
 export const Secao = styled.section`
 display: flex;
@@ -17,10 +21,12 @@ background-color: white;
   @media (min-width: 380px) AND (max-width: 960px) {
     margin:0 1rem;
     margin-top: 1rem;
-    
 }
 `
-export const InputTarefa = styled.input`
+
+export const InputTarefa =  styled.input.attrs((props)=>({
+  autoFocus:true
+})) `
 background-color: white;
 width: 64rem;
 height: 3rem;
@@ -30,6 +36,7 @@ border-right:0;
 border-right:0;
 border-left: 0;
 border-top: 0;
+
 &:focus{
 box-shadow: 0 0 0 0;
 border: 0 none;
@@ -37,7 +44,10 @@ outline: 0;
  
 }
 `
-export const Botao = styled.button`
+interface propsInput {
+  value:string;
+}
+export const Botao = styled.button <propsInput> `
 position: absolute;
 right: 0;
 height: 3rem;
@@ -45,4 +55,5 @@ width: 6rem;
 border-radius: 1rem;
 border-top: 0;
 border-right: 0;
+cursor: ${(props:propsInput)=> props.value.length == 0 && 'not-allowed'}
 `

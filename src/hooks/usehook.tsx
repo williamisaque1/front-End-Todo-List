@@ -28,9 +28,7 @@ interface parametros {
 const TransactionContext = createContext<parametros>({} as parametros);
 export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   const [dados, Setdados] = useState<Tarefas[]>([]);
-  useEffect(() => {
-    carregar();
-  }, []);
+
   const carregar = () => {
     axios.get("http://back-endtodolist.herokuapp.com").then((inf) => {
       Setdados(inf.data);
@@ -39,7 +37,7 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   const adicionar = (id: string, conteudo: string, realizada: boolean) => {
     console.log("dados id", id);
     axios
-      .post(`http://back-endtodolist.herokuapp.com/`, {
+      .post(`http://back-endtodolist.herokuapp.com`, {
         id,
         conteudo,
         realizada,

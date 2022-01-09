@@ -10,13 +10,13 @@ export function Input() {
   return (
     <Secao>
       <InputTarefa
-        value={dadosInput}
         onChange={(text) => setDadosInput(text.currentTarget.value)}
         placeholder="adicione uma tarefa !!!"
       />
       <Botao
+        value={dadosInput}
         onClick={() => {
-          adicionar(uuidv4(), dadosInput, false);
+          dadosInput.length != 0 && adicionar(uuidv4(), dadosInput, false);
         }}
       >
         adicionar
