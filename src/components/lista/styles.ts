@@ -42,6 +42,7 @@ input{
 padding: 1.2rem;
 & + li{
     margin-top: 1rem;
+    overflow-y: hidden;
 }
 svg{
     
