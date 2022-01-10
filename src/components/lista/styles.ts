@@ -1,4 +1,7 @@
 import styled from "styled-components";
+interface propsdelete{
+    deletado?:number;
+}
 export const List  = styled.ul`
 list-style: none;
 margin-top: 2rem;
@@ -27,6 +30,25 @@ align-items: center;
 justify-content: space-between;
 border-radius: 50rem;
 background-color:#c5c5c5;
+
+@keyframes slidein {
+  from {
+   
+transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(1600px);
+  }
+}
+
+ &.del {
+    animation-duration: 1s;
+  animation-name:   "slidein";
+  
+}
+
+
 p{
     overflow-x:auto;
     margin-left: 0.5rem;
@@ -44,8 +66,7 @@ padding: 1.2rem;
     margin-top: 1rem;
     overflow-y: hidden;
 }
-svg{
-    
+svg{  
     height: 45px;
     cursor: pointer;
     margin-right: 1rem;   

@@ -49,10 +49,13 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
   const deletar = (id: number) => {
     console.log("dados id", id);
     axios.delete(`https://back-endtodolist.herokuapp.com/${id}`).then((inf) => {
-      carregar();
-      inf.data == 1
-        ? alert("tarefa deletada com sucesso")
-        : alert("não foi possivel deletar a tarefa");
+      setTimeout(() => {
+        carregar();
+      }, 300);
+
+      if (inf.data == 0) {
+        alert("não foi possivel deletar a tarefa");
+      }
     });
   };
   const modificar = (id: number, realizada: boolean) => {

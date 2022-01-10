@@ -1,6 +1,6 @@
 import { List, ItemLista } from "./styles";
 import { FaTrashAlt } from "react-icons/fa";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTrasactions } from "../../hooks/usehook";
 
 export function Lista() {
@@ -8,12 +8,14 @@ export function Lista() {
   useEffect(() => {
     carregar();
   }, []);
+  const [deletado, setDeletado] = useState<number>();
   return (
     <>
       <List>
         {tarefas.length ? (
           tarefas.map((tarefa) => (
             <ItemLista
+              className={deletado == tarefa.id ? "del" : ""}
               key={tarefa.id}
               style={
                 tarefa.realizada
@@ -30,7 +32,13 @@ export function Lista() {
                 checked={tarefa.realizada}
               />
               <p>{tarefa.conteudo}</p>
-              <FaTrashAlt onClick={() => deletar(tarefa.id)} />
+              <FaTrashAlt
+                onClick={() => {
+                  setDeletado(tarefa.id);
+
+                  deletar(tarefa.id);
+                }}
+              />
             </ItemLista>
           ))
         ) : (
