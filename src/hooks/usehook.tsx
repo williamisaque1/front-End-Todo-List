@@ -51,7 +51,7 @@ export function TransactionsProvider({ children }: TrasactionsProviderProps) {
     axios.delete(`https://back-endtodolist.herokuapp.com/${id}`).then((inf) => {
       setTimeout(() => {
         carregar();
-      }, 300);
+      }, 200);
 
       if (inf.data == 0) {
         alert("não foi possivel deletar a tarefa");
