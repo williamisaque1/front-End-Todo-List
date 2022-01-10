@@ -34,17 +34,20 @@ background-color:#c5c5c5;
 @keyframes slidein {
   from {
    
-transform: translateX(0px);
+transform: translateX(0vw);
   }
 
   to {
-    transform: translateX(1600px);
+    transform: translateX(100vw);
   }
 }
 
  &.del {
-    animation-duration: 1s;
+    animation-duration: 0.75s;
   animation-name:   "slidein";
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  
   
 }
 
